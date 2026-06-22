@@ -1,0 +1,259 @@
+/* Contenedor principal en el navbar */
+.maestro-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* El área específica del logo */
+.logo-area {
+  width: 180px; /* Controla el ancho del logo aquí (ajústalo a tu gusto) */
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* La imagen en sí para que sea responsiva y no se desborde */
+.logo-area img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Esto evita que la imagen se estire o se ponga fea */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); /* Un sombreado leve para que resalte */
+  transition: transform 0.3s ease; /* Por si quieres un efecto al pasar el mouse */
+}
+
+/* Un efectito bacano cuando le pasen el mouse por encima */
+.logo-area img:hover {
+  transform: scale(1.05);
+}
+
+
+.maestro-layout {
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #001f8f;
+}
+
+.maestro-navbar {
+  height: 110px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.maestro-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #00a6c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 28px;
+  color: #0033a0;
+}
+
+.maestro-navbar nav {
+  display: flex;
+  gap: 34px;
+}
+
+.maestro-navbar nav button {
+  border: none;
+  background: transparent;
+  color: #001f8f;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.maestro-navbar nav button:hover,
+.maestro-navbar nav .nav-activo {
+  text-decoration: underline;
+}
+
+.maestro-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.maestro-actions button {
+  width: 58px;
+  height: 58px;
+  border: none;
+  background: #fafafa;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.maestro-dashboard {
+  padding: 35px 50px;
+}
+
+.maestro-info {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 90px;
+}
+
+.maestro-info p {
+  margin-bottom: 16px;
+}
+
+.maestro-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 90px;
+  align-items: center;
+}
+
+.maestro-card {
+  text-align: center;
+}
+
+.card-numero {
+  height: 110px;
+  background: white;
+  border-radius: 22px;
+  box-shadow: 0 12px 26px rgba(0, 31, 143, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001f8f;
+  font-size: 30px;
+  font-weight: 900;
+  padding: 10px;
+}
+
+.maestro-card p {
+  margin-top: 18px;
+  font-weight: 900;
+  color: #001f8f;
+}
+
+.titulo-materias {
+  margin-bottom: 30px;
+  color: #001f8f;
+  font-size: 32px;
+}
+
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.materia-card {
+  background: white;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 12px 26px rgba(0, 31, 143, 0.08);
+  border-left: 8px solid #001f8f;
+}
+
+.materia-card h2 {
+  color: #001f8f;
+  margin-bottom: 18px;
+}
+
+.materia-card p {
+  color: #222;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.materia-card button {
+  margin-top: 20px;
+  background: #4b0082;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.materia-card button:hover {
+  background: #32005d;
+}
+.materias-title-row {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 20px;
+}
+
+.materias-title-row h1 {
+  color: #001f8f;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.materias-title-row span {
+  height: 2px;
+  background: #cbd4ef;
+  flex: 1;
+}
+
+.materias-maestro {
+  color: #001f8f;
+  font-weight: 900;
+  margin-bottom: 40px;
+}
+
+.materias-grid-simple {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  gap: 30px 58px;
+  justify-content: start;
+  padding-left: 10px;
+}
+
+.materia-card-simple {
+  background: white;
+  border-radius: 22px;
+  min-height: 135px;
+  padding: 28px 24px 16px;
+  box-shadow: 0 14px 28px rgba(0, 31, 143, 0.12);
+  color: #001f8f;
+}
+
+.materia-card-simple h2 {
+  color: black;
+  font-size: 18px;
+  margin: 0 0 4px;
+  font-weight: 900;
+}
+
+.materia-card-simple h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.materia-card-simple p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+.materia-card-simple button {
+  display: block;
+  margin: 12px auto 0;
+  background: #001f8f;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 5px 28px;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.materia-card-simple button:hover {
+  background: #0033cc;
+}

@@ -1,0 +1,220 @@
+@page {
+  size: letter landscape;
+  margin: 6mm;
+}
+
+@media print {
+  .reporte-pol-6to {
+    display: block !important;
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .reporte-pol-6to:first-child {
+    page-break-before: auto !important;
+    break-before: auto !important;
+  }
+}
+.reporte-pol-6to {
+  width: 100%;
+  padding: 8mm;
+  background: white;
+  color: black;
+  page-break-after: always;
+  font-family: Arial, sans-serif;
+}
+
+.pol6-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  align-items: start;
+}
+
+.pol6-logos {
+  display: flex;
+  gap: 12px;
+}
+
+.pol6-logo-text {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #1f75bc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1f75bc;
+  font-weight: bold;
+}
+
+.pol6-titulo {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.pol6-titulo h2,
+.pol6-titulo h3 {
+  margin: 3px 0;
+}
+
+.pol6-grado {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #1f75bc;
+  line-height: 0.9;
+}
+
+.pol6-numero {
+  font-size: 105px;
+  font-weight: 900;
+}
+
+.pol6-to {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.pol6-grado-texto {
+  display: block;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.pol6-grado p {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pol6-nombre-container {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.pol6-nombre-label {
+  width: 220px;
+  border-top: 5px solid #555;
+  background: #b8c9e6;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pol6-nombre-estudiante {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pol6-tabla,
+.pol6-tabla-tecnica {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.pol6-tabla th,
+.pol6-tabla td,
+.pol6-tabla-tecnica th,
+.pol6-tabla-tecnica td {
+  border: 1px solid #222;
+  padding: 4px;
+  text-align: center;
+}
+
+.pol6-tabla th,
+.pol6-tabla .pol6-area,
+.pol6-tabla .materia-nombre,
+.pol6-tabla-tecnica th {
+  background: #b8c9e6;
+  font-weight: bold;
+}
+
+.pol6-tabla .materia-nombre {
+  width: 145px;
+}
+
+.pol6-tabla .vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  min-width: 30px;
+  height: 78px;
+}
+
+.pol6-tabla .shaded {
+  background: #dbe5f3;
+}
+
+.pol6-tecnicas-title {
+  margin: 10px 0 4px 0;
+  text-align: center;
+  background: #1f75bc;
+  color: white;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.pol6-firmas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 260px;
+  margin: 20px 70px 12px 70px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pol6-firmas span {
+  display: block;
+  border-top: 1px solid black;
+  margin-bottom: 3px;
+}
+
+.pol6-firmas p {
+  margin: 0;
+}
+
+.pol6-observaciones {
+  border: 1px solid #222;
+  height: 38px;
+  padding: 7px;
+  margin-bottom: 5px;
+}
+
+.pol6-footer {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 5px;
+}
+
+.pol6-situacion,
+.pol6-leyenda {
+  border: 1px solid #222;
+  padding: 7px;
+  font-size: 11px;
+}
+
+.pol6-situacion p {
+  margin: 2px 0 0 35px;
+}
+
+.pol6-leyenda strong {
+  display: block;
+  text-align: center;
+}
+
+.pol6-leyenda p {
+  margin: 4px 0 0 0;
+}
+
+@media print {
+  .reporte-pol-6to {
+    padding: 6mm;
+    page-break-after: always;
+  }
+}

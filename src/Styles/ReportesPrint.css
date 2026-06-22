@@ -1,0 +1,50 @@
+@media print {
+  .no-print,
+  .sidebar,
+  .topbar,
+  aside,
+  nav,
+  header,
+  button {
+    display: none !important;
+  }
+
+  html,
+  body {
+    height: auto !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  .admin-layout,
+  .main-content,
+  .content,
+  .reportes-container,
+  #area-impresion,
+  .reportes-print {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    position: static !important;
+  }
+
+  .reporte-estudiante,
+  .reporte-pol-4to,
+  .reporte-pol-5to,
+  .reporte-pol-6to,
+  .reporte-primaria-4to,
+  .reporte-primaria-5to,
+  .reporte-primaria-6to,
+  .reporte-secundaria-1ro,
+  .reporte-secundaria-2do,
+  .reporte-secundaria-3ro {
+    display: block !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+}

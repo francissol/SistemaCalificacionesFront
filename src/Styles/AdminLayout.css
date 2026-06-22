@@ -1,0 +1,1238 @@
+
+
+
+  /* Cada bloque de estudiante se convierte en una página individual */
+
+
+  /* Control del tamaño del papel */
+  
+
+  /* Truco extra: Evita que la tabla o las observaciones se rompan feo */
+  .boletin-tabla, .reporte-header, .reporte-info {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  
+
+.reporte-tabla-formal {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  margin-top: 18px;
+  font-size: 13px;
+  background: white;
+}
+
+.reporte-tabla-formal th,
+.reporte-tabla-formal td {
+  border: 1px solid #333;
+  padding: 7px 6px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000;
+}
+
+.reporte-tabla-formal thead th {
+  font-weight: 700;
+}
+
+.reporte-tabla-formal tbody td:first-child {
+  text-align: left;
+  font-style: italic;
+  width: 220px;
+}
+
+.asignaturas-cell {
+  width: 220px;
+  font-size: 15px;
+}
+
+.titulo-competencias {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.observaciones-cell {
+  width: 180px;
+  font-size: 15px;
+}
+
+.reporte-info {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  border: 1px solid #333;
+  border-bottom: none;
+  margin-top: 16px;
+}
+
+.reporte-info div {
+  border-bottom: 1px solid #333;
+  padding: 8px;
+}
+
+.reporte-info div:nth-child(odd) {
+  border-right: 1px solid #333;
+}
+
+
+.reporte-header {
+  display: center;
+justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.fecha-reporte {
+  font-weight: 600;
+}
+
+
+.boletin-tabla {
+  width: 100%;
+  border-collapse: collapse !important;
+  border: 1px solid #000 !important;
+  table-layout: fixed;
+  margin-top: 0;
+  font-size: 13px;
+}
+
+.boletin-tabla th,
+.boletin-tabla td {
+  border: 1px solid #000 !important;
+  padding: 6px;
+  text-align: center;
+  vertical-align: middle;
+  color: #000;
+  background: #fff !important;
+}
+
+.boletin-tabla td:first-child {
+  text-align: left;
+  font-style: italic;
+}
+
+.boletin-tabla .asignaturas {
+  width: 230px;
+  font-weight: bold;
+}
+
+.boletin-tabla .observaciones {
+  width: 180px;
+  font-weight: bold;
+}
+
+.boletin-tabla .titulo-competencias {
+  font-size: 15px;
+  font-weight: bold;
+}
+/* Estilos base reutilizables para los contenedores de iconos */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  flex-shrink: 0; /* Evita que se deforme el círculo */
+}
+
+/* Fila de información alineada con el icono */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Espacio entre el icono y el texto */
+  font-size: 1.05rem;
+}
+
+.info-text {
+  display: flex;
+  align-items: center;
+}
+
+/* Nombre del campo (ej. "Curso:") */
+.info-text span {
+  color: #1e3a8a; /* Azul oscuro como el de tu imagen */
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.info-text span::after {
+  content: ':';
+}
+
+.info-text strong {
+  color: #334155;
+  font-weight: 500;
+}
+
+/* --- Variaciones de colores para cada icono de la lista --- */
+
+/* 1. Icono de la Materia (Matemáticas) arriba */
+.materia-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.icon-container-materia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #e0f2fe; /* Azul pastel */
+  color: #0284c7;
+  font-size: 1rem;
+}
+
+/* 2. Icono Curso (Birrete) */
+.curso-icon {
+  background-color: #e0f2fe; /* Azul pastel */
+  color: #0284c7;
+}
+
+/* 3. Icono Nivel (Silueta Personas) */
+.nivel-icon {
+  background-color: #f3e8ff; /* Morado pastel */
+  color: #7c3aed;
+}
+
+/* 4. Icono Año Escolar (Calendario) */
+.anio-icon {
+  background-color: #dcfce7; /* Verde pastel */
+  color: #16a34a;
+}
+
+/* 5. Icono Tipo de Evaluación (Barras de gráfico) */
+.eval-icon {
+  background-color: #fef3c7; /* Amarillo/Miel pastel */
+  color: #d97706;
+}
+
+/* Ajuste al botón volver para el icono */
+.icon-back {
+  font-size: 0.9rem;
+}
+
+/* --- ARREGLO DE LA SECCIÓN DE INFORMACIÓN --- */
+
+/* Forzar que las filas vayan una debajo de otra con buen espacio */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Cada fila de información bien alineada */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Espacio entre el círculo del icono y el texto */
+  width: 100%;
+}
+
+/* Contenedor del texto (Label + Valor) */
+.info-text {
+  display: flex;
+  align-items: center;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+/* El título azul (Curso, Nivel, etc.) */
+.info-text span {
+  color: #1e4a9a; /* Azul intermedio/oscuro */
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.info-text span::after {
+  content: ':';
+}
+
+/* El valor en negrita */
+.info-text strong {
+  color: #334155;
+  font-weight: 600;
+}
+
+/* --- CORRECCIÓN CRÍTICA DE LOS ICONOS --- */
+/* Esto asegura que el círculo no se aplaste y que el icono de react-icons quede perfectamente centrado */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  flex-shrink: 0; /* Evita que el círculo se vuelva un óvalo */
+}
+
+/* Forzar tamaño correcto al icono de react-icons dentro del círculo */
+.icon-container svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Lo mismo para el icono de la materia (Matemáticas) */
+.materia-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.icon-container-materia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.icon-container-materia svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+
+/* --- ARREGLO DEL SELECT DEL PERÍODO --- */
+.periodo-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 24px 30px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.periodo-card label {
+  font-size: 0.95rem;
+  color: #334155;
+  font-weight: 600;
+}
+
+/* Estilizar el select para que no use el del sistema operativo nativo */
+.periodo-card select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  color: #1e293b;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+/* AsignacionMaestroPage.css */
+
+/* Global container styling */
+/* AsignacionMaestroPage.css */
+
+/* Contenedor principal */
+.asignacion-page {
+  padding: 30px;
+  background-color: #f8fafc; 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+/* Botón 'Volver' - Letra más clara */
+.btn-volver {
+  background-color: #fff;
+  color: #1e40af; 
+  border: 1px solid #d1d5db; 
+  padding: 10px 20px;
+  border-radius: 8px; 
+  font-size: 16px; /* Subido de 14px */
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-volver:hover {
+  background-color: #f1f5f9;
+  border-color: #94a3b8;
+}
+
+/* Título principal grande */
+.titulo-page {
+  font-size: 32px; /* Subido de 24px para que resalte bastante */
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #1f2937;
+}
+
+/* Tarjeta de información del curso */
+.info-curso-card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 25px;
+}
+
+/* Nombre de la materia (Matemáticas) */
+.info-curso-card h2 {
+  font-size: 26px; /* Subido de 20px, ahora se nota el peso */
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* Grid de información */
+.info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Más espacio entre filas */
+}
+
+/* Filas de información (Curso, Nivel, Año escolar...) */
+.info-item {
+  font-size: 18px; /* Subido de 14px para excelente legibilidad */
+  line-height: 1.5;
+}
+
+/* Etiquetas azules como 'Curso:' */
+.info-item span {
+  color: #1e40af;
+  font-weight: 700;
+}
+
+/* Valores como '5to - 5toA' o 'PRIMARIA' */
+.info-item strong {
+  color: #374151;
+  font-weight: 600;
+  margin-left: 4px;
+}
+
+/* Tarjeta del selector de período */
+.periodo-card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 25px;
+}
+
+/* Label del selector */
+.periodo-card label {
+  font-size: 18px; /* Subido de 14px */
+  color: #4b5563;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* El menú desplegable (Select) */
+.periodo-card select {
+  width: 100%;
+  max-width: 340px; /* Un poco más ancho para que quepa el texto grande */
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 17px; /* Subido de 14px */
+  color: #1f2937;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* Mensaje de aviso cuando falta seleccionar período */
+.mensaje-periodo {
+  font-size: 18px; /* Subido de 14px */
+  color: #4b5563;
+  text-align: center;
+  margin-top: 40px;
+  padding: 24px;
+  background-color: #f1f5f9;
+  border-radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6fb;
+}
+
+.admin-layout {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ==========================================
+   SIDEBAR (MENÚ LATERAL)
+   ========================================== */
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: #011da5; /* Tu azul original */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease, min-width 0.3s ease;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Cuando el menú se encoge */
+.admin-layout.collapsed .sidebar {
+  width: 70px;
+  min-width: 70px;
+}
+
+.sidebar-header {
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.sidebar .logo-img {
+  width: 100%;
+  max-width: 110px; /* Tamaño controlado para que no flote gigante */
+  height: auto;
+  border-radius: 8px;
+}
+
+.sidebar h2 {
+  margin: 5px 0 0 0;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+/* Menú con scroll independiente */
+.sidebar-menu {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.sidebar-menu a.active,
+.sidebar-menu a:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Centrar iconos cuando esté colapsado */
+.admin-layout.collapsed .sidebar-menu a {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+/* ==========================================
+   CONTENIDO PRINCIPAL Y TOPBAR
+   ========================================== */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topbar {
+  height: 70px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar-left h3 {
+  margin: 0;
+  color: #1e293b;
+}
+
+/* El botón de hamburguesa FUERA de la sidebar */
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #011da5; /* Azul como tu marca */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: #f1f5f9;
+}
+
+/* Perfil de usuario esquina derecha */
+.topbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* ==========================================
+   BOTONES DE ACCIÓN (CON TU DISEÑO ORIGINAL)
+   ========================================== */
+.data-table button {
+  margin-right: 8px;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* El primer botón dentro de la celda (Editar) */
+.data-table button:first-child {
+  background: #ffc107;
+  color: black; /* Por si acaso, para que el texto se lea claro */
+}
+
+/* El último botón dentro de la celda (Eliminar) */
+.data-table button:last-child {
+  background: #dc3545;
+  color: white;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-icon-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.action-icon-btn:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.action-icon-btn.logout:hover {
+  color: #ef4444;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 28px;
+}
+
+/* ==========================================
+   COMPONENTES EXTRAS (Cards, Tablas, Reportes)
+   ========================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.card p {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 10px 0 0;
+  color: #011da5;
+}
+
+.form-card {
+  background: white;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.form-card input, .form-card select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-card button {
+  padding: 10px 16px;
+  border: none;
+  background: #011da5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.data-table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.data-table th, .data-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.data-table th {
+  background: #011da5;
+  color: white;
+}
+
+
+
+
+/* ==========================================
+   ESTRUCTURACIÓN DE LA VISTA DE REPORTES
+   ========================================== */
+.reportes-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reportes-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Grid de tres columnas para los apartados por nivel educativo */
+.reportes-grid-niveles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+
+/* Modificación de Tarjetas por Módulo */
+.card-reporte-modulo {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e2e8f0;
+}
+
+/* Colores sutiles en los bordes superiores de los niveles */
+.card-reporte-modulo.primaria { border-top: 4px solid #3b82f6; }
+.card-reporte-modulo.secundaria { border-top: 4px solid #10b981; }
+.card-reporte-modulo.politecnico { border-top: 4px solid #8b5cf6; }
+
+.modulo-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+.badge-primaria { background: #eff6ff; color: #2563eb; }
+.badge-secundaria { background: #ecfdf5; color: #059669; }
+.badge-politecnico { background: #f5f3ff; color: #7c3aed; }
+
+.modulo-desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 5px 0 15px 0;
+  min-height: 38px;
+}
+
+/* Formularios internos alineados */
+.form-row-reporte {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-row-reporte select {
+  flex: 1;
+  min-width: 200px;
+}
+
+.form-vertical-reporte {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Botonera estilizada */
+.btn-primario {
+  background: #011da5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-accion-modulo {
+  background: #f1f5f9;
+  color: #1e293b;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.btn-accion-modulo:hover {
+  background: #e2e8f0;
+  color: #000;
+}
+.btn-accion-modulo.btn-anual {
+  background: #fff;
+  border: 1px dashed #011da5;
+  color: #011da5;
+}
+.btn-accion-modulo.btn-anual:hover {
+  background: #eff6ff;
+}
+
+/* Sección de Alertas / Pendientes */
+.pendientes-seccion {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+}
+.btn-pendiente {
+  background: #ea580c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-pendiente:hover { background: #c2410c; }
+
+/* Botón flotante superior de impresión */
+.btn-print-main {
+  background: #10b981;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Estilos de Etiquetas dentro de la tabla */
+.badge-curso-tabla {
+  background: #f1f5f9;
+  color: #334155;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.estado-pendiente-tag {
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: bold;}
+
+  .modulo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-ayuda {
+  border: none;
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+}
+
+.competencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 24px;
+  margin-top: 25px;
+}
+
+.competencia-card {
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.modal-ayuda {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  width: 460px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.modal-contenido h3 {
+  color: #0026a3;
+  margin-bottom: 14px;
+}
+
+.modal-contenido button {
+  margin-top: 15px;
+}
+
+.modulo-competencias {
+  margin-top: 25px;
+}
+
+.modulo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.modulo-header h2 {
+  color: #001fa8;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.btn-ayuda {
+  border: none;
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 14px 18px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.13);
+}
+
+.modulo-form {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 22px;
+  border-radius: 18px;
+}
+
+.modulo-form h3 {
+  color: #001fa8;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.modulo-form select,
+.modulo-form input {
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  padding: 0 14px;
+}
+
+.modulo-form button,
+.acciones-calificaciones button {
+  background: #001fa8;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.competencias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
+  gap: 24px;
+  margin-top: 25px;
+}
+
+.competencia-card {
+  border-radius: 22px;
+  padding: 24px;
+  background: white;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.competencia-card h3 {
+  color: #001fa8;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.contador-actividades {
+  color: #001fa8;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 18px 0;
+}
+
+.sin-actividades {
+  color: #6b7280;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.actividad-box {
+  margin-top: 20px;
+}
+
+.actividad-box h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.tabla-notas {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.tabla-notas input {
+  width: 80px;
+  height: 34px;
+  border: 1px solid #b7c3ff;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.acciones-calificaciones {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.modal-ayuda {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 28px;
+  border-radius: 20px;
+  width: 460px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+}
+
+.modal-contenido h3 {
+  color: #001fa8;
+  margin-bottom: 14px;
+}
+
+.modal-contenido button {
+  margin-top: 15px;
+  background: #001fa8;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+}
+
+
+.auditoria-card {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+.auditoria-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.auditoria-header h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.auditoria-header p {
+  margin: 6px 0 0;
+  color: #64748b;
+}
+
+.auditoria-total {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 800;
+}
+
+.auditoria-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.auditoria-table th {
+  background: #011da5;
+  color: white;
+  padding: 14px;
+  text-align: left;
+}
+
+.auditoria-table td {
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nivel-tag {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.fila-pendiente {
+  background: #fef2f2;
+}
+
+.fila-pendiente:hover {
+  background: #fee2e2;
+}
+
+.fila-completada {
+  background: #f0fdf4;
+}
+
+.fila-completada:hover {
+  background: #dcfce7;
+}
+
+.estado-pendiente {
+  background: #dc2626;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.estado-ok {
+  background: #16a34a;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.auditoria-vacio {
+  text-align: center;
+  padding: 24px;
+  color: #059669;
+  font-weight: 800;
+}
+

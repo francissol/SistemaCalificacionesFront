@@ -1,0 +1,227 @@
+@page {
+  size: letter landscape;
+  margin: 6mm;
+}
+
+@media print {
+  .reporte-pol-5to {
+    display: block !important;
+    page-break-before: always !important;
+    break-before: page !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .reporte-pol-4to:first-child {
+    page-break-before: auto !important;
+    break-before: auto !important;
+  }
+}
+.reporte-pol-5to {
+  width: 100%;
+  padding: 8mm;
+  background: white;
+  color: black;
+  page-break-after: always;
+  font-family: Arial, sans-serif;
+}
+
+.pol5-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  align-items: start;
+}
+
+
+
+.pol5-logos {
+  display: flex;
+  gap: 12px;
+}
+
+.pol5-logo-text {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #d60b52;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d60b52;
+  font-weight: bold;
+}
+
+.pol5-titulo {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.pol5-titulo h2,
+.pol5-titulo h3 {
+  margin: 3px 0;
+}
+
+.pol5-grado {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #d60b52;
+  line-height: 0.9;
+}
+
+.pol5-numero {
+  font-size: 105px;
+  font-weight: 900;
+}
+
+.pol5-to {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.pol5-grado-texto {
+  display: block;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.pol5-grado p {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pol5-nombre-container {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.pol5-nombre-label {
+  width: 220px;
+  border-top: 5px solid #555;
+  background: #e6b8cf;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pol5-nombre-estudiante {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pol5-tabla,
+.pol5-tabla-tecnica {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.pol5-tabla th,
+.pol5-tabla td,
+.pol5-tabla-tecnica th,
+.pol5-tabla-tecnica td {
+  border: 1px solid #222;
+  padding: 4px;
+  text-align: center;
+}
+
+.pol5-tabla th,
+.pol5-tabla .pol5-area,
+.pol5-tabla .materia-nombre,
+.pol5-tabla-tecnica th {
+  background: #ffdbe4;
+  font-weight: bold;
+}
+
+.pol5-tabla .materia-nombre {
+  width: 145px;
+}
+
+.pol5-tabla .vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  min-width: 30px;
+  height: 78px;
+}
+
+.pol5-tabla .shaded {
+  background: #f3dbed;
+}
+
+.pol5-tecnicas-title {
+  margin: 10px 0 4px 0;
+  text-align: center;
+  background: #d60b52;
+  color: white;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.pol5-firmas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 260px;
+  margin: 20px 70px 12px 70px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pol5-firmas span {
+  display: block;
+  border-top: 1px solid black;
+  margin-bottom: 3px;
+}
+
+.pol5-firmas p {
+  margin: 0;
+}
+
+.pol5-observaciones {
+  border: 1px solid #222;
+  height: 38px;
+  padding: 7px;
+  margin-bottom: 5px;
+}
+
+.pol5-footer {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 5px;
+}
+
+.pol5-situacion,
+.pol5-leyenda {
+  border: 1px solid #222;
+  padding: 7px;
+  font-size: 11px;
+}
+
+.pol5-situacion p {
+  margin: 2px 0 0 35px;
+}
+
+.pol5-leyenda strong {
+  display: block;
+  text-align: center;
+}
+.r7-creditos {
+  text-align: right;
+  color: #bbb;
+  font-size: 11px;
+  margin-top: 8px;
+}
+.pol5-leyenda p {
+  margin: 4px 0 0 0;
+}
+
+@media print {
+  .reporte-pol-5to {
+    padding: 6mm;
+    page-break-after: always;
+  }
+}

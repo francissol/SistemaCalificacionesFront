@@ -1,0 +1,232 @@
+@page {
+  size: letter landscape;
+  margin: 6mm;
+}
+
+.reporte-4to-primaria {
+  width: 1100px;
+  background: white;
+  color: black;
+  padding: 20px 26px;
+  margin: 0 auto 35px auto;
+  font-family: Arial, sans-serif;
+  page-break-after: always;
+}
+
+.p4-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 230px;
+  align-items: start;
+}
+
+.p4-logo {
+  width: 170px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.p4-titulo {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.p4-titulo h2,
+.p4-titulo h3 {
+  margin: 3px 0;
+}
+
+.p4-grado {
+  text-align: center;
+  color: #ec3b91;
+  font-weight: bold;
+}
+
+.p4-icono {
+  font-size: 42px;
+  color: #c9b0dd;
+  line-height: 1;
+}
+
+.p4-grado h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.p4-grado h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.p4-nombre-container {
+  display: flex;
+  align-items: end;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.p4-nombre-label {
+  width: 220px;
+  border-top: 5px solid #555;
+  background: #f8c7da;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.p4-nombre-linea {
+  flex: 1;
+  border-bottom: 1px solid #222;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+
+.p4-barra {
+  background: #ec7faf;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 8px;
+}
+
+.p4-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.p4-tabla th,
+.p4-tabla td {
+  border: 1px solid #222;
+  padding: 4px;
+  text-align: center;
+}
+
+.p4-tabla th {
+  background: #f8c7da;
+  font-weight: bold;
+}
+
+.p4-area-vertical {
+  background: #f8c7da;
+  font-weight: bold;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  width: 30px;
+}
+
+.p4-materia {
+  font-weight: bold;
+  text-align: left !important;
+  width: 145px;
+}
+
+.p4-tabla .vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  width: 28px;
+  background: #f8c7da;
+}
+
+.p4-observaciones {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.p4-observaciones td {
+  border: 1px solid #222;
+  height: 36px;
+}
+
+.p4-observaciones-title {
+  background: #f8c7da;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-weight: bold;
+  text-align: center;
+  width: 28px;
+}
+
+.p4-periodo-label {
+  background: #f8c7da;
+  font-weight: bold;
+  text-align: center;
+  width: 35px;
+}
+
+.p4-footer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.45fr 1.75fr;
+  gap: 22px;
+  margin-top: 14px;
+}
+
+.p4-asistencia,
+.p4-escala {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+
+.p4-asistencia th,
+.p4-asistencia td,
+.p4-escala th,
+.p4-escala td {
+  border: 1px solid #222;
+  padding: 5px;
+  text-align: center;
+}
+
+.p4-asistencia th,
+.p4-escala th {
+  background: #f8c7da;
+}
+
+.p4-leyenda {
+  border: 1px solid #222;
+  padding: 6px;
+  font-size: 9px;
+}
+
+.p4-leyenda strong {
+  display: block;
+  text-align: center;
+}
+
+.p4-leyenda p {
+  margin: 2px 0;
+}
+
+.p4-escala td:last-child {
+  text-align: left;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print,
+  aside,
+  nav,
+  body > header {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .reporte-4to-primaria {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    page-break-after: always;
+    break-after: page;
+  }
+}

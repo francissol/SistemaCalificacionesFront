@@ -1,0 +1,127 @@
+/* Contenedor principal que ocupa toda la pantalla */
+.login-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+/* Barras azules de los extremos */
+.top-bar, .bottom-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #0023b0; /* El azul fuerte de la imagen */
+}
+
+.top-bar { top: 0; }
+.bottom-bar { bottom: 0; }
+
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #0023b0; /* Mismo azul de las barras */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 5px;
+}
+
+.login-button:hover {
+  background-color: #001a88; /* Un tono un poquito más oscuro al pasar el mouse */
+}
+
+/* Mensaje de error por si falla */
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+/* La tarjeta blanca del Login */
+.login-container {
+  background-color: #f7f9fc;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 30px;
+  border: 1.5px solid #5d75cd; /* Bordes azulados suaves */
+  border-radius: 24px;         /* Esquinas bien redondeadas */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+/* Contenedor del Logo */
+.logo-wrapper {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-logo {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Formulario e Inputs */
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  outline: none;
+  border-color: #0023b0;
+}
+
+/* Mensaje de error */
+.error-message {
+  color: #d32f2f;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Enlace inferior */
+.lost-password-wrapper {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.lost-password-link {
+  color: #3b65c4;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.lost-password-link:hover {
+  text-decoration: underline;
+}

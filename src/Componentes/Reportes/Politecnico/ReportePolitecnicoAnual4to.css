@@ -1,0 +1,211 @@
+@page {
+  size: letter landscape;
+  margin: 6mm;
+}
+
+.reporte-pol-4to {
+  width: 100%;
+  padding: 8mm;
+  background: white;
+  color: black;
+  page-break-after: always;
+  font-family: Arial, sans-serif;
+}
+
+.pol4-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  align-items: start;
+}
+
+.pol4-logos {
+  display: flex;
+  gap: 12px;
+}
+
+.pol4-logo-text {
+  width: 65px;
+  height: 65px;
+  border: 2px solid #a9e8e4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #76e9e2;
+  font-weight: bold;
+}
+
+.pol4-titulo {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.pol4-titulo h2,
+.pol4-titulo h3 {
+  margin: 3px 0;
+}
+
+.pol4-grado {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #1e8e88;
+  line-height: 0.9;
+}
+
+.pol4-numero {
+  font-size: 105px;
+  font-weight: 900;
+}
+
+.pol4-to {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.pol4-grado-texto {
+  display: block;
+  font-size: 38px;
+  font-weight: 900;
+}
+
+.pol4-grado p {
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.pol4-nombre-container {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.pol4-nombre-label {
+  width: 220px;
+  border-top: 5px solid #555;
+  background: #b8e6cd;
+  padding: 8px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pol4-nombre-estudiante {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pol4-tabla,
+.pol4-tabla-tecnica {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+.pol4-tabla th,
+.pol4-tabla td,
+.pol4-tabla-tecnica th,
+.pol4-tabla-tecnica td {
+  border: 1px solid #222;
+  padding: 4px;
+  text-align: center;
+}
+
+.pol4-tabla th,
+.pol4-tabla .pol4-area,
+.pol4-tabla .materia-nombre,
+.pol4-tabla-tecnica th {
+  background: #b8e6cd;
+  font-weight: bold;
+}
+
+.pol4-tabla .materia-nombre {
+  width: 145px;
+}
+
+.pol4-tabla .vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  min-width: 30px;
+  height: 78px;
+}
+
+.pol4-tabla .shaded {
+  background: #dbf3e9;
+}
+
+.pol4-tecnicas-title {
+  margin: 10px 0 4px 0;
+  text-align: center;
+  background: #12a79d;
+  color: white;
+  padding: 4px;
+  font-size: 14px;
+}
+
+.pol4-firmas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 260px;
+  margin: 20px 70px 12px 70px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.pol4-firmas span {
+  display: block;
+  border-top: 1px solid black;
+  margin-bottom: 3px;
+}
+
+.pol4-firmas p {
+  margin: 0;
+}
+
+.pol4-observaciones {
+  border: 1px solid #222;
+  height: 38px;
+  padding: 7px;
+  margin-bottom: 5px;
+}
+
+.pol4-footer {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 5px;
+}
+
+.pol4-situacion,
+.pol4-leyenda {
+  border: 1px solid #222;
+  padding: 7px;
+  font-size: 11px;
+}
+
+.pol4-situacion p {
+  margin: 2px 0 0 35px;
+}
+
+.pol4-leyenda strong {
+  display: block;
+  text-align: center;
+}
+.r7-creditos {
+  text-align: right;
+  color: #bbb;
+  font-size: 11px;
+  margin-top: 8px;
+}
+.pol4-leyenda p {
+  margin: 4px 0 0 0;
+}
+
+@media print {
+  .reporte-pol-4to {
+    padding: 6mm;
+    page-break-after: always;
+  }
+}

@@ -1,0 +1,259 @@
+/* ReporteSecundariaAnual3ro Styles */
+
+@page {
+  size: letter landscape;
+  margin: 6mm;
+}
+
+.reportes-anuales-secundaria {
+  background: white;
+}
+
+.reporte-1ro-secundaria {
+  width: 1050px;
+  min-height: 760px;
+  background: white;
+  color: black;
+  padding: 25px 40px;
+  margin: 0 auto 35px auto;
+  font-family: Arial, sans-serif;
+  page-break-after: always;
+}
+
+.r5-header {
+  display: grid;
+  grid-template-columns: 220px 1fr 230px;
+  align-items: start;
+  margin-bottom: 5px;
+}
+
+.r5-logos {
+  display: flex;
+  align-items: center;
+}
+
+.r5-logo-real {
+  width: 170px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.r5-titulo {
+  text-align: center;
+  line-height: 1.1;
+}
+
+.r5-titulo h2,
+.r5-titulo h3 {
+  margin: 3px 0;
+}
+
+.r5-grado {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color:  #008b45;
+  line-height: 0.9;
+}
+
+.r5-numero {
+  font-size: 110px;
+  font-weight: 900;
+}
+
+.r5-er {
+  font-size: 28px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.r5-grado-texto {
+  display: block;
+  font-size: 40px;
+  font-weight: 900;
+  color: #63b34b;
+}
+
+.r5-grado p {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: #63b34b;
+  font-weight: bold;
+}   
+
+.r5-nombre-container {
+  display: flex;
+  align-items: end;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.r5-nombre-label {
+  width: 220px;
+  border-top: 5px solid #555;
+  background: #b9c9e5;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.r5-nombre-linea {
+  flex: 1;
+  border-bottom: 1px solid #222;
+  margin-left: 10px;
+  padding-left: 15px;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+
+.r5-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.r5-tabla th,
+.r5-tabla td {
+  border: 1px solid #222;
+  padding: 5px;
+  text-align: center;
+}
+
+.r5-tabla th {
+  background: #e4f1dd;
+  font-weight: bold;
+}
+
+.r5-tabla .r5-area,
+.r5-tabla .materia-nombre {
+  background: #c7e3b6;;
+
+  font-weight: bold;
+}
+
+.r5-tabla .materia-nombre {
+  text-align: center;
+  width: 150px;
+}
+
+.r5-tabla .vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  min-width: 32px;
+  height: 95px;
+}
+
+.r5-tabla .shaded {
+  background:#c7e3b6;
+}
+
+.r5-firmas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 300px;
+  margin: 25px 70px 18px 70px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.r5-firmas span {
+  display: block;
+  border-top: 1px solid black;
+  margin-bottom: 3px;
+}
+
+.r5-firmas p {
+  margin: 0;
+}
+
+.r5-bloque-observacion-competencias {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.r5-observaciones {
+  border: 1px solid #222;
+  height: 48px;
+  padding: 8px;
+  margin-bottom: 0;
+}
+
+.r5-competencias {
+  border: 1px solid #222;
+  padding: 6px;
+  font-size: 10px;
+  background: white;
+  margin: 0;
+}
+
+.r5-competencias p {
+  margin: 2px 0;
+}
+
+.r5-footer {
+  display: grid;
+  grid-template-columns: 1fr 1.45fr;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.r5-situacion,
+.r5-leyenda {
+  border: 1px solid #222;
+  padding: 7px;
+  font-size: 11px;
+}
+
+.r5-situacion p {
+  margin: 3px 0 0 35px;
+}
+
+.r5-leyenda strong {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+}
+
+.r5-leyenda p {
+  margin: 5px 0 0 0;
+  line-height: 1.3;
+}
+
+.r5-creditos {
+  text-align: right;
+  color: #bbb;
+  font-size: 11px;
+  margin-top: 8px;
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .no-print,
+  aside,
+  nav,
+  body > header {
+    display: none !important;
+  }
+
+  .reporte-1ro-secundaria {
+    width: 100%;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    page-break-after: always;
+    break-after: page;
+  }
+}
