@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://franluv-001-site1.ltempurl.com",
+  baseURL: "http://11313619:60-dayfreetrial@franluv-001-site1.itempurl.com",
 });
 
 api.interceptors.request.use((config) => {
