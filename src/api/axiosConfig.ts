@@ -1,12 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://franluv-001-site1.ltempurl.com",
-
-  headers: {
-    // Esto le manda al servidor la llave maestra '11313619:60-dayfreetrial' de forma transparente
-    'Authorization': 'Basic ' + btoa('11313619:60-dayfreetrial')
-  }
+  baseURL: "https://localhost:7023/api",
 });
 
 api.interceptors.request.use((config) => {
