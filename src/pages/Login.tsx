@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../auth/AuthContext";
 import "../Styles/Login.css";
+import logoMireducacion from "../imagenes/Gemini_Generated_Image_vm4u0uvm4u0uvm4u.png";
 
 const Login = () => {
   const [nombreUsuario, setNombreUsuario] = useState("");
@@ -57,7 +58,7 @@ const Login = () => {
         {/* Logo de MIR */}
         <div className="logo-wrapper">
           <img 
-            src="src\imagenes\Gemini_Generated_Image_vm4u0uvm4u0uvm4u.png" /* Cambia esto por la ruta real de tu logo */
+              src={logoMireducacion}
             alt="MIR Calificaciones" 
             className="login-logo" 
           />
